@@ -13,14 +13,18 @@ form.addEventListener('submit', (e) => {
     }, 0);
 
     var text = input.value.trim();
-    let cnt = 0;
-    const run = setInterval(() => {
-        cnt++;
-        const div = document.createElement('div');
-        div.innerHTML = `<p>Anh yêu em x${cnt}</p>`;
-        box.appendChild(div);
-        if( cnt == Number(text) )  {
-            clearInterval(run);
-        }
-    }, 10)
+    if( Number(text) ) {
+        let cnt = 0;
+        const run = setInterval(() => {
+            cnt++;
+            const div = document.createElement('div');
+            div.innerHTML = `<p>Anh yêu em x${cnt}</p>`;
+            box.appendChild(div);
+            if( cnt == Number(text) )  {
+                clearInterval(run);
+            }
+        }, 10)
+    }
+    else alert("pls enter 'NUMBER'");
+    
 })
